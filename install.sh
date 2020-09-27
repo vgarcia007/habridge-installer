@@ -22,6 +22,7 @@ sed "s|__FILE_NAME__|$filename|g" <habridge.service.temp >habridge.service
 rm habridge.service.temp
 sudo mv habridge.service /etc/systemd/system/habridge.service
 systemctl daemon-reload
+systemctl enable habridge
 systemctl start habridge
 systemctl status habridge
 echo "you can reach the frontend at http://$(hostname):8080"
